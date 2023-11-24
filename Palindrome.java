@@ -1,25 +1,26 @@
-import java.util.Scanner;
 
+import java.util.Scanner;
 public class Palindrome {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter an number: ");
-        int num = scanner.nextInt();
-        scanner.close();
+        Scanner sc = new Scanner(System.in);
 
-        int originalNum = num;
-        int reversedNum = 0;
+        System.out.println("Enter a String");
+        String OrignalString = sc.next();
 
-        while (num > 0) {
-            int digit = num % 10;
-            reversedNum = reversedNum * 10 + digit;
-            num = num / 10;
+        OrignalString = OrignalString.toUpperCase();
+        int l = OrignalString.length();
+
+        String ReversedString = "";
+
+        for(int i = l - 1; i >= 0; i--){
+          char v = OrignalString.charAt(i);
+          ReversedString += v;
         }
 
-        if (originalNum == reversedNum) {
-            System.out.println("The number is a palindrome.");
+        if( OrignalString.equalsIgnoreCase(ReversedString)){
+            System.out.println("The String is a palindrome.");
         } else {
-            System.out.println("The number is not a palindrome.");
+            System.out.println("The String is not a palindrome.");
         }
     }
 }
