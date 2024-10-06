@@ -47,8 +47,8 @@ public class Student {
     }
 
     private void calculate_grade() {
-        int totalMarks = Arrays.stream(marks).sum();
-        double averageMarks = totalMarks / (double) marks.length;
+        int totalMarks = Arrays.stream(this.marks).sum();
+        double averageMarks = totalMarks / (double) this.marks.length;
 
         if (averageMarks >= 90) {
             grade = 'A';
